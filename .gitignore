@@ -1,0 +1,6 @@
+node_modules
+build
+.env
+public
+error.log
+info.log

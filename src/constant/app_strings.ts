@@ -1,0 +1,13 @@
+import Config from '../config/dot_config';
+import { envEnum } from './enum';
+
+export default class AppStrings {
+    static app_name = 'Autoline';
+
+    static appUrl(): string {
+        const preFix = Config._APP_ENV === envEnum.production ? 'https' : 'http';
+        return `${preFix}://${Config._APP_URL}:${Config._PORT}`;
+    }
+
+    static otpExpireTime = '5';
+}
