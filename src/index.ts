@@ -33,7 +33,7 @@ app.use(ErrorHandler.errorHandler);
 if (Config._APP_ENV === envEnum.production || Config._APP_ENV === envEnum.staging) {
     const options: Record<string, unknown> = {
         key: fs.readFileSync('./certificates/key.key'),
-        cert: fs.readFileSync('./certificates/cert.crt')
+        cert: fs.readFileSync('./certificates/cert.csr')
     };
     https.createServer(options, app).listen(port, function () {
         logger.info(`Secure Server Started with SSL at port : ${port}`);
